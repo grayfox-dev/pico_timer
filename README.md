@@ -8,6 +8,10 @@ Simple interrupt driven code for RP2040 for coding challenge
 
 ## Building & Deploying Application
 
+### Prerequisites
+* Docker
+* Raspberry Pi Pico microcontroller
+
 ### Setting Up Environment
 1. `./buildContainer.sh` to create local docker image to house cross-compilation tools (should only need to be called once)
 2. `./launchContainer.sh` to launch an instance of the docker container (used whenever we need to compile)
