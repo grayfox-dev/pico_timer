@@ -8,11 +8,15 @@ Simple interrupt driven code for RP2040 for coding challenge
 
 ## Building & Deploying Application
 
-### Build Process
-Building will require Raspberry Pi [Pico-SDK](Link Will Go Here), but ideally I would like to 
-supply a dockerfile to encapsulate the build process
+### Setting Up Environment
+1. `./buildContainer.sh` to create local docker image to house cross-compilation tools (should only need to be called once)
+2. `./launchContainer.sh` to launch an instance of the docker container (used whenever we need to compile)
+3. `./prepEnvironment.sh` to clone/pull the most updated version of the C/C++ SDK for the RP2040 (generally used once)
 
-Currently TBD, but build process will ideally be as simple as:
+### Build Process
+Building will require Raspberry Pi Pico's SDK. The above mentioned scripts should handle the dependencies such that all one should require is Docker.
+
+Actual build process TBD, but will ideally be as simple as:
 
 ```sh
 mkdir build
@@ -20,6 +24,8 @@ cd build
 cmake ..
 make
 ```
+
+### Deploying Application
 
 To deploy to the Raspberry Pi Pico microcontroller, hold the `BOOTSEL` button while connecting to 
 a computer over USB. This will place the microcontroller into a mass-storage device mode where the 
